@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Privacy Policy - RGL Tasks</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .privacy-container {
+            padding: 20px;
+            padding-bottom: 80px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .privacy-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .privacy-container h2 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .privacy-container p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .back-nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            padding: 15px 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .btn-back {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body class="privacy-page">
+    <div id="app-container" style="overflow-y: auto;">
+        <div class="privacy-container">
+            <nav class="back-nav">
+                <button onclick="window.location.href='index.html'" class="btn-back">← Back to App</button>
+            </nav>
+
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: February 15, 2026</p>
+
+            <section>
+                <h2>1. Introduction</h2>
+                <p>Welcome to RGL Tasks ("we," "our," or "the App"). High importance is placed on your privacy and the
+                    protection of your personal data. This Privacy Policy describes how we collect, use, and share
+                    information when you use our Telegram Mini App.</p>
+            </section>
+
+            <section>
+                <h2>2. Information We Collect</h2>
+                <p>While using RGL Tasks, we may collect certain information provided by the Telegram platform:</p>
+                <ul>
+                    <li><strong>Telegram Profile Information:</strong> This includes your user ID, first name, last
+                        name, username, and profile photo URL.</li>
+                    <li><strong>App Activity:</strong> We track your task completion progress, RGL coin balance, and
+                        referral data within the App.</li>
+                    <li><strong>Wallet Information:</strong> If you connect your TON wallet via TonConnect, we will have
+                        access to your public wallet address. We never have access to your private keys or seed phrases.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. How We Use Your Information</h2>
+                <p>The information collected is used for the following purposes:</p>
+                <ul>
+                    <li>To provide and maintain the App's core functionality.</li>
+                    <li>To track and verify task completions for RGL reward distribution.</li>
+                    <li>To process withdrawal requests to your TON wallet.</li>
+                    <li>To prevent fraud, multiple accounts, and abuse of the reward system.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Data Storage and Security</h2>
+                <p>Your local app state (like balance and completed tasks) is stored on your device using LocalStorage.
+                    We may also store verification data on our secure backend servers. We implement industry-standard
+                    security measures to protect your data, but please be aware that no transmission over the internet
+                    is 100% secure.</p>
+            </section>
+
+            <section>
+                <h2>5. Third-Party Services</h2>
+                <p>The App integrates with third-party services:</p>
+                <ul>
+                    <li><strong>Telegram Messenger:</strong> The platform hosting the Mini App.</li>
+                    <li><strong>TON Blockchain:</strong> Facilitating coin withdrawals via TonConnect.</li>
+                </ul>
+                <p>These services have their own privacy policies which we encourage you to review.</p>
+            </section>
+
+            <section>
+                <h2>6. Your Rights</h2>
+                <p>You have the right to access the data we hold about you and to request its deletion. If you wish to
+                    delete your data, please contact us or remove the Mini App from your Telegram account and clear your
+                    local storage.</p>
+            </section>
+
+            <section>
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us via our official Telegram
+                    channel.</p>
+            </section>
+        </div>
+    </div>
+    <script>
+        // Initialize Telegram WebApp
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.BackButton.show();
+        tg.BackButton.onClick(() => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
