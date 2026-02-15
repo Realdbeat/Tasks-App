@@ -4,7 +4,7 @@
  */
 
 const onboarding = {
-    channelUrl: 'https://t.me/your_channel', // Replace with actual channel link
+    channelUrl: 'https://t.me/dontplayjustdoit', // Replace with actual channel link
 
     init() {
         console.log('Onboarding initialized');
@@ -16,10 +16,11 @@ const onboarding = {
         const btnVerify = document.getElementById('btn-verify');
 
         if (btnFollow) {
-            btnFollow.href = this.channelUrl;
-            btnFollow.addEventListener('click', () => {
-                // Inform user they must return here after following
-                console.log('User clicking follow');
+            btnFollow.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tg = window.Telegram.WebApp;
+                tg.openTelegramLink(this.channelUrl);
+                console.log('User clicking follow via SDK');
             });
         }
 
