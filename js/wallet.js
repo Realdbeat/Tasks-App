@@ -41,12 +41,10 @@ document.getElementById('btn-withdraw').addEventListener('click', async () => {
     try {
         window.Telegram.WebApp.showConfirm(`Confirm withdrawal of ${state.balance.toFixed(0)} RGL to your TON wallet?`, async (confirmed) => {
             if (confirmed) {
-                window.Telegram.WebApp.showProgress();
 
                 // Mock transaction request
                 // In a real app, you would send a transaction to your contract or backend
                 setTimeout(() => {
-                    window.Telegram.WebApp.hideProgress();
                     window.Telegram.WebApp.showAlert("Withdrawal request submitted! Your TON will arrive shortly.");
 
                     state.balance = 0;

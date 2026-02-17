@@ -52,8 +52,6 @@ const promote = {
         };
 
         try {
-            window.Telegram.WebApp.showProgress();
-
             // In real app, we wait for transaction. 
             // For MVP demonstrations, we simulate successful payment if TonConnect is active.
             const result = await tonConnectUI.sendTransaction(transaction);
@@ -65,8 +63,6 @@ const promote = {
         } catch (error) {
             console.error('Payment error:', error);
             window.Telegram.WebApp.showAlert("Transaction was cancelled or failed." + error);
-        } finally {
-            window.Telegram.WebApp.hideProgress();
         }
     },
 
