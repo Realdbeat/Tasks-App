@@ -45,7 +45,7 @@ const promote = {
             validUntil: Math.floor(Date.now() / 1000) + 60, // 60 sec
             messages: [
                 {
-                    address: "EQCD39VS5jcptHL8vMjEXCc_n_Hduf57En6K-7vkyS9O22zp", // Example destination (Replace with your wallet)
+                    address: "UQCBNz7zMOYjQM_nzs3ISaWxxNtndJfPvoQiSpwoj0FaOLcM", // Example destination (Replace with your wallet)
                     amount: amountInNano
                 }
             ]
@@ -64,7 +64,7 @@ const promote = {
             }
         } catch (error) {
             console.error('Payment error:', error);
-            window.Telegram.WebApp.showAlert("Transaction was cancelled or failed.");
+            window.Telegram.WebApp.showAlert("Transaction was cancelled or failed." + error);
         } finally {
             window.Telegram.WebApp.hideProgress();
         }
