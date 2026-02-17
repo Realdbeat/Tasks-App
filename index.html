@@ -56,14 +56,54 @@
 
             <nav class="tab-bar">
                 <button class="tab-item active" data-tab="tasks">Tasks</button>
+                <button class="tab-item" data-tab="promote">Promote</button>
                 <button class="tab-item" data-tab="wallet">Wallet</button>
-                <button class="tab-item" data-tab="profile">Profile</button>
             </nav>
 
             <section id="tasks-tab" class="tab-content active">
                 <h2 class="section-title">Available Tasks</h2>
                 <div id="tasks-list" class="scroll-area">
                     <!-- Tasks will be injected here -->
+                </div>
+            </section>
+
+            <section id="promote-tab" class="tab-content">
+                <h2 class="section-title">Promote Your Link</h2>
+                <div class="glass-card promote-card">
+                    <p class="crypto-hint" style="margin-bottom: 20px;">Pay with TON to add your task and get real
+                        users.</p>
+                    <form id="add-task-form">
+                        <div class="form-group">
+                            <label for="task-title">Task Title</label>
+                            <input type="text" id="task-title" placeholder="e.g. Follow my Twitter" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-action">Button Action</label>
+                            <select id="task-action">
+                                <option value="Follow">Follow</option>
+                                <option value="Join">Join</option>
+                                <option value="Visit">Visit</option>
+                                <option value="Subscribe">Subscribe</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-url">URL Link</label>
+                            <input type="url" id="task-url" placeholder="https://t.me/yourchannel" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-reward">Reward per user (RGL)</label>
+                            <input type="number" id="task-reward" value="10" min="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-target">Target completions</label>
+                            <input type="number" id="task-target" value="100" min="10">
+                        </div>
+                        <div class="payment-summary">
+                            <span>Total Cost:</span>
+                            <span id="total-ton-cost">0.1 TON</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-publish-task">Publish Task</button>
+                    </form>
                 </div>
             </section>
 
@@ -87,6 +127,7 @@
     <!-- Scripts -->
     <script src="js/tasks.js?v1.0.0"></script>
     <script src="js/wallet.js?v1.0.0"></script>
+    <script src="js/promote.js?v1.0.0"></script>
     <script src="js/onboarding.js?v1.0.0"></script>
     <script src="app.js?v1.0.0"></script>
 </body>

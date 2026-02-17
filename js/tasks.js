@@ -1,30 +1,21 @@
-const tasks = [
-    {
-        id: 'task_1',
-        title: 'Follow our Twitter',
-        reward: 10,
-        url: 'https://twitter.com/your_handle',
-        action: 'Follow'
-    },
-    {
-        id: 'task_2',
-        title: 'Join Community Group',
-        reward: 15,
-        url: 'https://t.me/your_community',
-        action: 'Join'
-    },
-    {
-        id: 'task_3',
-        title: 'Visit Website',
-        reward: 5,
-        url: 'https://google.com',
-        action: 'Visit'
-    }
-];
+let tasks = [];
 
-function renderTasks() {
+async function renderTasks() {
     const list = document.getElementById('tasks-list');
     const completedTasks = JSON.parse(localStorage.getItem('completed_tasks') || '[]');
+
+    try {
+        const response = await fetch('api/get_tasks.php');
+        tasks = await response.json();
+    } catch (e) {
+        console.error('Failed to fetch tasks:', e);
+        // Fallback or empty
+    }
+
+    if (tasks.length === 0) {
+        list.innerHTML = '<p style="text-align: center; color: var(--text-secondary); margin-top: 20px;">No tasks available yet.</p>';
+        return;
+    }
 
     list.innerHTML = tasks.map(task => {
         const isCompleted = completedTasks.includes(task.id);
@@ -48,7 +39,8 @@ function handleTaskClick(taskId) {
     if (!task) return;
 
     // Open URL
-    window.Telegram.WebApp.openLink(task.url);
+    const tg = window.Telegram.WebApp;
+    tg.openTelegramLink(task.url);
 
     // Mock verification (Wait 5 seconds then show claim button)
     const btn = document.querySelector(`#item-${taskId} .btn-task`);
