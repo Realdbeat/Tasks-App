@@ -3,7 +3,8 @@ let tonConnectUI;
 async function initWallet() {
     // Initialize TonConnect UI
     tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/simple-wallet/public/tonconnect-manifest.json', // Use a placeholder or your own manifest URL
+        manifestUrl: 'https://tasksapps.rav.com.ng/tonconnect-manifest.json',
+
         buttonRootId: 'ton-connect'
     });
 
